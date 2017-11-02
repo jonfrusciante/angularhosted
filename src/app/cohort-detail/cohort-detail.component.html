@@ -1,0 +1,18 @@
+
+<div>
+    <form>  
+        <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{cohort.title}}</h3>     
+        <div *ngIf="editTitle" class="input-field col s12">
+            <input type="input"  name="title" required placeholder="title"
+            [(ngModel)]="cohort.title">
+        </div>
+        <div class="input-field col s12">
+            <input type="input"  name="program" required placeholder="unc"
+            [(ngModel)]="cohort.program">
+        </div>
+				<div style="margin-bottom: 50px;"> 
+        <a type="button" (click)="updateCohort()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i>>Update</a>  
+				<a type="button" (click)="deleteCohort()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i>>Delete</a>
+				</div>    
+    </form>
+</div>

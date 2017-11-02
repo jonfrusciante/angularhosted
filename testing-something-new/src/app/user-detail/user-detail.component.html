@@ -1,0 +1,19 @@
+<div>
+    <form>  
+        <h3 *ngIf="!editName" (click)="onNameClick()">{{user.name}}</h3>     
+        <div *ngIf="editName" class="form-group">
+            <input type="input" class="form-control" name="name" required placeholder="name"
+            [(ngModel)]="user.name">
+        </div>
+        <div class="form-group">
+            <input type="input" class="form-control" name="email" required placeholder="email"
+            [(ngModel)]="user.email">
+        </div>
+        <div class="form-group">
+            <input type="input" class="form-control" name="typ" required placeholder="type"
+            [(ngModel)]="user.type">
+        </div> 
+        <button type="button" (click)="updateUser()" class="btn btn-primary">Update</button>  
+        <button type="button" (click)="deleteUser()" class="btn btn-danger">Delete</button>    
+    </form>
+</div>

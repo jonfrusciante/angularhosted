@@ -1,0 +1,31 @@
+<div class="row">
+		<div class="col s12 m9">
+			<div *ngIf="!hidenewLesson">
+				<h2>New Lesson</h2>
+				<form #form="ngForm" (ngSubmit)="onSubmitAddLesson(form.value)" class="col s12 m12">
+					<div class"input-field col s12">
+						<input type="text"  required name="title" ngModel>
+						<label>Title</label>
+					<div class"input-field col s12">
+						<input type="text"  required name="cohort" ngModel>
+						<label>Cohort</label>
+					<div class"input-field col s12">
+						<input type="text"  required name="date" ngModel>
+						<label>Due</label>
+					<div class"input-field col s12">				
+						<input type="text"  name="description" ngModel>
+						<label>Description</label>
+					<a type="submit" class="btn waves-effect waves-light">Save</a>
+				</form>
+			</div>
+			<lesson-detail *ngIf="selectedLesson && hidenewLesson" 
+			(updateLessonEvent)="onUpdateLessonEvent($event)" 
+			(deleteLessonEvent)="onDeleteLessonEvent($event)"
+			 [lesson]="selectedLesson">
+			</lesson-detail>
+		</div>
+		<div class="col s12 m3">
+			<a style="margin-bottom:2px; margin-top:50px;" type="button" (click)="newLesson()" class="btn waves-effect waves-light">+ New Lesson</a>
+			<lesson-list [lessons]="lessons" (SelectLesson)="onSelectLesson($event)"></lesson-list>
+		</div>
+	</div>

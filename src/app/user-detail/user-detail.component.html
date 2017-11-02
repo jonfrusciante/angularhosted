@@ -1,0 +1,20 @@
+<div>
+    <form>  
+        <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{user.name}}</h3>     
+        <div *ngIf="editTitle" class="input-field col s12">
+            <input type="input"  name="name" required placeholder=""
+            [(ngModel)]="user.name">
+        </div>
+        <div class="input-field col s12">
+            <input type="input"  name="gmail" required placeholder="devildude98@gmail.com"
+            [(ngModel)]="user.gmail">
+        </div>
+        <div class="input-field col s12">
+            <input type="input"   name="type" required placeholder="student" [(ngModel)]="user.type">
+				</div>
+				<div style="margin-bottom: 50px;"> 
+        <a type="button" (click)="updateUser()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i>>Update</a>  
+				<a type="button" (click)="deleteUser()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i>>Delete</a>
+				</div>    
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <form>  
+        <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{lesson.title}}</h3>     
+        <div *ngIf="editTitle" class="input-field col s12">
+            <input type="input"  name="title" required placeholder="title"
+            [(ngModel)]="lesson.title">
+        </div>
+        <div class="input-field col s12">
+            <input type="input"  name="cohort" required placeholder="UNC_May_2017 is the best cohort"
+            [(ngModel)]="lesson.cohort">
+				</div>
+				<div class="input-field col s12">
+            <input type="input"  name="date" required placeholder="mm/dd/yyyy"
+            [(ngModel)]="lesson.cohort">
+        </div>
+        <div class="input-field col s12">
+            <textarea  class="materialize-textarea" name="description" [(ngModel)]="lesson.description">
+            </textarea>
+				</div>
+				<div style="margin-bottom: 50px;"> 
+        <a type="button" (click)="updateLesson()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i></a>  
+				<a type="button" (click)="deleteLesson()" class="btn waves-effect waves-light">Update<i class="material-icons right">send</i>>Delete</a>
+				</div>    
+    </form>
+</div>

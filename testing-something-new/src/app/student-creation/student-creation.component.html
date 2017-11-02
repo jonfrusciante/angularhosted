@@ -1,0 +1,69 @@
+
+			<!-- <form class="col s12" #form="ngForm" (ngSubmit)="onSubmitAddUser(form.value)">
+
+				<div class="row">
+					<div class="input-field col s6">
+							<i class="material-icons prefix">account_circle</i>
+						<input id="firstName" type="text" required name="givenName" ngModel>
+						<label for="firstName">First Name</label>
+					</div>
+					
+					<div class="input-field col s6">
+						<input id="familyName" type="text" required name="familyName" ngModel>
+						<label for="familyName">Last Name</label>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">email</i>
+						<input id="userEmail" type="email" required name="userEmail" ngModel>
+						<label for="userEmail" data-error="try again" data-success="yep, you didn't screw up">Email</label>
+					</div>
+				</div>
+
+				<p>
+						<input name="group1" type="radio" id="test1" required name="type" ngModel value="admin"/>
+						<label for="test1">Admin</label>
+					</p>
+					<p>
+						<input name="group1" type="radio" id="test2" required name="type" ngModel value="teacher"/>
+						<label for="test2">Teacher</label>
+					</p>
+					<p>
+						<input class="with-gap" name="group1" type="radio" id="test3" required name="type" ngModel value="student"/>
+						<label for="test3">Student</label>
+					</p>
+					<button type="submit"><a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Submit</a></button>
+			</form> -->
+<div class="row">
+	<div class="col-sm-9">
+		<div *ngIf="!hidenewUser">
+			<form #form="ngForm" (ngSubmit)="onSubmitAddUser(form.value)" method="POST" class="well">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" class="form-control" required name="name" ngModel="name">
+					</div>
+					<div class="form-group">
+						<label>Email</label>
+						<input type="text" class="form-control" required name="email" ngModel="email">
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<input type="text" class="form-control" name="type" ngModel="type">
+					</div>
+					<button type="submit" class="btn btn-success">Save</button>
+				</form>
+				<user-detail *ngIf="selectedUser && hidenewUser" 
+				(updateUservent)="onUpdateUserEvent($event)" 
+				(deleteUserEvent)="onDeleteUserEvent($event)"
+				 [user]="selectedUser">
+				</user-detail>
+			</div>
+			<div class="col-sm-3">
+					<button style="margin-bottom:2px;" type="button" (click)="newUser()" class="btn btn-success btn-block">+ New User</button>
+					<user-list [users]="users" (SelectUser)="onSelectUser($event)"></user-list>
+				</div>
+
+	</div>
+</div>
