@@ -40,6 +40,7 @@ import { HomeworkDetailTeacherComponent } from './homework-detail-teacher/homewo
 import { LessonDetailTeacherComponent } from './lesson-detail-teacher/lesson-detail-teacher.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
+import { GoAwayComponent } from './go-away/go-away.component';
 
 
 
@@ -75,7 +76,8 @@ import { AnnouncementsComponent } from './announcements/announcements.component'
 		HomeworkListTeacherComponent,
 		LessonListTeacherComponent,
 		HomeworkDetailTeacherComponent,
-		LessonDetailTeacherComponent
+		LessonDetailTeacherComponent,
+		GoAwayComponent
 
   ],
   imports: [
